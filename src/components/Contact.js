@@ -4,8 +4,18 @@ import {
   Text,
   StyleSheet
 } from 'react-native';
+import Contacts from 'react-native-contacts';
 
-class Contacts extends Component {
+Contacts.getAll((err, contacts) => {
+    if (err) {
+      throw err;
+    }
+  // contacts returned
+  console.log(contacts);
+  console.log(contacts.length);
+})
+
+class Contact extends Component {
   constructor(props) {
     super();
   }
@@ -28,4 +38,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Contacts;
+export default Contact;

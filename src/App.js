@@ -18,7 +18,7 @@ import {
 } from 'react-native-router-flux';
 
 import Home from './components/Home';
-import Contacts from './components/Contacts';
+import Contact from './components/Contact';
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class App extends Component {
       <Router>
         <Stack key="root">
           <Scene key="home" component={Home} />
-          <Scene key="contacts" component={Contacts} initial />
+          <Scene key="contacts" component={Contact} initial />
         </Stack>
       </Router>
     );
