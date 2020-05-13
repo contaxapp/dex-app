@@ -13,7 +13,7 @@ class Home extends Component {
   render() {
     return (
       <View style={[styles.container]}>
-          <Text>Home Screen</Text>
+          <Text>Dex Home Screen</Text>
       </View>
     );
   }
