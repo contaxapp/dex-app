@@ -10,7 +10,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "fsevents": "^2.1.3",
     "react": "16.11.0",
     "react-native": "0.62.2"
   },
