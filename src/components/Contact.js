@@ -4,20 +4,18 @@ import {
   Text,
   StyleSheet
 } from 'react-native';
-import Contacts from 'react-native-contacts';
 
-Contacts.getAll((err, contacts) => {
-    if (err) {
-      throw err;
-    }
-  // contacts returned
-  console.log(contacts);
-  console.log(contacts.length);
-})
+import { getContacts } from '../utils/contact'
 
 class Contact extends Component {
   constructor(props) {
     super();
+  }
+
+  componentDidMount() {
+    getContacts((contacts) => {
+      console.log(contacts);
+    });
   }
 
   render() {
