@@ -1,0 +1,46 @@
+name: Test Suite
+
+on:
+  push:
+    branches: 
+      - '*'
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  run-test-suite:
+    name: Run Test Suite
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Run npm install &  npm test
+        run: |
+          npm install
+          npm test
+      - name: Upload coverage folder
+        uses: actions/upload-artifact@v1
+        with:
+          name: coverage
+          path: ./coverage/
+  codacy-coverage-reporter:
+    name: Codacy Coverage Reporter
+    runs-on: ubuntu-latest
+    needs: run-test-suite
+    steps:
+      - uses: actions/checkout@master
+      - name: Download coverage folder from run-test-suite job
+        uses: actions/download-artifact@v1
+        with:
+          name: coverage
+      - name: Report code coverage to Codacy
+        uses: codacy/codacy-coverage-reporter-action@master
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
