@@ -5,6 +5,6 @@ import Home from '../src/components/Home';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 
-it('renders correctly', () => {
-  renderer.create(<Home />);
-});
+// it('renders correctly', () => {
+//   renderer.create(<Home />);
+// });
