@@ -36,7 +36,7 @@ jobs:
     needs: run-test-suite
     steps:
       - uses: actions/checkout@master
-      - name: Download coverage folder from job1
+      - name: Download coverage folder from run-test-suite job
         uses: actions/download-artifact@v1
         with:
           name: coverage
