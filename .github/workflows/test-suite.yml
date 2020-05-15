@@ -8,7 +8,7 @@ jobs:
     name: Jest
     steps:
       - name: Run Jest Test Suite
-        run: npm i && npm test
+        run: npm install
   codacy-coverage-reporter:
     runs-on: ubuntu-latest
     name: Codacy Coverage Reporter
