@@ -9,12 +9,12 @@ jobs:
     steps:
       - name: Run Jest Test Suite
         run: npm install
-  codacy-coverage-reporter:
-    runs-on: ubuntu-latest
-    name: Codacy Coverage Reporter
-    steps:
-      - uses: actions/checkout@master
-      - name: Repore code coverage to Codacy
-        uses: codacy/codacy-coverage-reporter-action@master
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+  # codacy-coverage-reporter:
+  #   runs-on: ubuntu-latest
+  #   name: Codacy Coverage Reporter
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - name: Repore code coverage to Codacy
+  #       uses: codacy/codacy-coverage-reporter-action@master
+  #       with:
+  #         project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
