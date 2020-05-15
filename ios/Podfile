@@ -34,6 +34,9 @@ target 'dex' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  # Manually added pods
+  pod 'react-native-contacts', :path => '../node_modules/react-native-contacts'
+
   target 'dexTests' do
     inherit! :search_paths
     # Pods for testing
