@@ -1,8 +1,6 @@
 # Dex React Native App
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a04932437c1b449e81cfe97b951b495f)](https://app.codacy.com/manual/kaxevgg/dex-app?utm_source=github.com&utm_medium=referral&utm_content=kaxevgg/dex-app&utm_campaign=Badge_Grade_Dashboard)
-
-![Test Suite](https://github.com/kaxevgg/dex-app/workflows/Test%20Suite/badge.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a04932437c1b449e81cfe97b951b495f)](https://app.codacy.com/manual/kaxevgg/dex-app?utm_source=github.com&utm_medium=referral&utm_content=kaxevgg/dex-app&utm_campaign=Badge_Grade_Dashboard) ![Test Suite](https://github.com/kaxevgg/dex-app/workflows/Test%20Suite/badge.svg)
 
 This is the Dex React Native App repository.
 
