@@ -5,7 +5,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import { getContacts } from '../utils/contact'
+import { getContacts } from '../utils/contact';
 
 class Contact extends Component {
   constructor(props) {
