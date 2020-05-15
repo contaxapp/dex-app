@@ -3,24 +3,26 @@ name: Test Suite
 on: ["push","pull_request"]
 
 jobs:
-  test:
+  job1:
+    name: Install node_modules & run npm test
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm test
-    - uses: actions/checkout@master
-      - name: Repore code coverage to Codacy
-        uses: codacy/codacy-coverage-reporter-action@master
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          node-version: ${{ matrix.node-version }}
+        run: |
+          npm install
+          npm test
+      - name: Upload coverage folder
+        uses: actions/upload-artifact@v1
+        with:
+          name: coverage
+          path: ./coverage/
   # codacy-coverage-reporter:
   #   runs-on: ubuntu-latest
   #   name: Codacy Coverage Reporter
