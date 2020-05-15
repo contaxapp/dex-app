@@ -3,6 +3,12 @@ name: Test Suite
 on: ["push","pull_request"]
 
 jobs:
+  run-jest:
+    runs-on: ubuntu-latest
+    name: Jest
+    steps:
+      - name: Run Jest Test Suite
+        run: pwd && ls
   codacy-coverage-reporter:
     runs-on: ubuntu-latest
     name: Codacy Coverage Reporter
@@ -12,9 +18,3 @@ jobs:
         uses: codacy/codacy-coverage-reporter-action@master
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-  run-jest:
-    runs-on: ubuntu-latest
-    name: Jest
-    steps:
-      - name: Run Jest Test Suite
-        run: npm test
