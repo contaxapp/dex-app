@@ -26,12 +26,14 @@ jobs:
           npm install
           npm test
       - name: Upload coverage folder
+        if: {{ github.repository == 'dexapp/dex-app' && github.event == 'push' }}
         uses: actions/upload-artifact@v1
         with:
           name: coverage
           path: ./coverage/
   codacy-coverage-reporter:
     name: Codacy Coverage Reporter
+    if: github.repository == 'dexapp/dex-app' && github.event == 'push'
     runs-on: ubuntu-latest
     needs: run-test-suite
     steps:
@@ -42,6 +44,5 @@ jobs:
           name: coverage
       - name: Report code coverage to Codacy
         uses: codacy/codacy-coverage-reporter-action@master
-        if: ${{ secrets.CODACY_PROJECT_TOKEN }}
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
