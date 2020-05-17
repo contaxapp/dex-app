@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Button
 } from 'react-native';
 
 class Home extends Component {
@@ -14,6 +15,10 @@ class Home extends Component {
     return (
       <View style={[styles.container]}>
           <Text>Dex Home Screen</Text>
+          <Button
+            title="Go to Contact"
+            onPress={() => this.props.navigation.navigate('Contact')}
+          />
       </View>
     );
   }

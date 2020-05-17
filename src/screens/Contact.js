@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Button
 } from 'react-native';
 
 import { getContacts } from '../library/utils/contact';
@@ -45,6 +46,10 @@ class Contact extends Component {
       <View style={[styles.container]}>
           <Text>Contacts Home Screen</Text>
           {this.printContacts(this.state.contacts)}
+          <Button
+            title="Go to Home"
+            onPress={() => this.props.navigation.navigate('Home')}
+          />
       </View>
     );
   }
