@@ -17,8 +17,8 @@ import {
   Lightbox,
 } from 'react-native-router-flux';
 
-import Home from './components/Home';
-import Contact from './components/Contact';
+import Home from './screens/Home';
+import Contact from './screens/Contact';
 
 class App extends Component {
   constructor(props) {
