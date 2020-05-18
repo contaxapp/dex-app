@@ -11,7 +11,7 @@ export function getContacts(callback) {
     });
 }
 
-export async function sha1Hash(itemToBeHashed, cb) {
-    const hash = await RNSimpleCrypto.SHA.sha1(itemToBeHashed);
+export async function sha512Hash(itemToBeHashed, cb) {
+    const hash = await RNSimpleCrypto.SHA.sha512(itemToBeHashed);
     cb(hash);
 }
