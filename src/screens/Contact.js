@@ -7,6 +7,7 @@ import {
   Button
 } from 'react-native';
 
+import { prettyPrintJson } from '../library/utils/dev';
 import { getContacts, sha512Hash } from '../library/utils/contact';
 import ContactItem from '../library/components/ContactItem';
 
@@ -24,9 +25,19 @@ class Contact extends Component {
   componentDidMount() {
     getContacts((contacts) => {
 
-      sha512Hash(contacts[0].recordID, (hash) => {
-        console.log(contacts[0].recordID);
-        console.log(hash);
+      contacts.map((contact) => {
+        sha512Hash(contact.recordID)
+        .then(recordIDHash => {
+          sha512Hash(JSON.stringify(contact))
+          .then((contactHash) => {
+            let hashedContact = {
+              'recordID': contact.recordID,
+              'hashedRecordID': recordIDHash,
+              'hashedContact': contactHash
+            }
+            prettyPrintJson(hashedContact);
+          })
+        })
       });
 
       this.setState({ contacts: [contacts[0]] })
