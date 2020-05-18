@@ -1,3 +1,4 @@
+import RNSimpleCrypto from "react-native-simple-crypto";
 import React, { Component } from 'react';
 import {
   View,
@@ -6,7 +7,7 @@ import {
   Button
 } from 'react-native';
 
-import { getContacts } from '../library/utils/contact';
+import { getContacts, sha1Hash } from '../library/utils/contact';
 import ContactItem from '../library/components/ContactItem';
 
 class Contact extends Component {
@@ -22,8 +23,13 @@ class Contact extends Component {
 
   componentDidMount() {
     getContacts((contacts) => {
-      console.log(contacts);
-      this.setState({ contacts })
+
+      sha1Hash(contacts[0].recordID, (hash) => {
+        console.log(contacts[0].recordID);
+        console.log(hash);
+      });
+
+      this.setState({ contacts: [contacts[0]] })
     });
   }
 
