@@ -7,7 +7,7 @@ import {
   Button
 } from 'react-native';
 
-import { getContacts, sha1Hash } from '../library/utils/contact';
+import { getContacts, sha512Hash } from '../library/utils/contact';
 import ContactItem from '../library/components/ContactItem';
 
 class Contact extends Component {
@@ -24,7 +24,7 @@ class Contact extends Component {
   componentDidMount() {
     getContacts((contacts) => {
 
-      sha1Hash(contacts[0].recordID, (hash) => {
+      sha512Hash(contacts[0].recordID, (hash) => {
         console.log(contacts[0].recordID);
         console.log(hash);
       });

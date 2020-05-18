@@ -1,10 +1,10 @@
-import { sha1Hash } from '../contact';
+import { sha512Hash } from '../contact';
 
-test('should return sha1 hash', () => {
-    sha1Hash('1', (hash) => {
-        expect(hash).toBe('NWoZK3kTsExUV00Ywo1G5jlUKKs=');
+test('should return sha512 hash', () => {
+    sha512Hash('1', (hash) => {
+        expect(hash).toBe('Tf9Oo0DwqCPxXT9PAati6uDl2lecy4Ufjbnf6ExYsrN7iZA6dA4e4XLaeTpuedVg5ff5vQWKEqKAQz7W+kZRCg==');
     });
-    sha1Hash('2', (hash) => {
-        expect(hash).toBe('2kuSN7rMzfGcB2DKt67EqDWQELA=');
+    sha512Hash('2', (hash) => {
+        expect(hash).toBe('QLJEESZB3XjdT5O2yRkN1G4AmRlNWkQle3761u+f9Gg9oe2gJERIyzQ6poj10+/XMU2v5YCsC8vxFa7Kno3BFA==');
     });
 });
