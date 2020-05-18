@@ -29,7 +29,7 @@ class Contact extends Component {
         sha512Hash(contact.recordID)
         .then(recordIDHash => {
           sha512Hash(JSON.stringify(contact))
-          .then((contactHash) => {
+          .then(contactHash => {
             let hashedContact = {
               'recordID': contact.recordID,
               'hashedRecordID': recordIDHash,
@@ -40,7 +40,7 @@ class Contact extends Component {
         })
       });
 
-      this.setState({ contacts: [contacts[0]] })
+      this.setState({ contacts })
     });
   }
 
