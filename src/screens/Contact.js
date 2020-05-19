@@ -1,3 +1,4 @@
+import RNSimpleCrypto from "react-native-simple-crypto";
 import React, { Component } from 'react';
 import {
   View,
@@ -6,7 +7,8 @@ import {
   Button
 } from 'react-native';
 
-import { getContacts } from '../library/utils/contact';
+import { prettyPrintJson } from '../library/utils/dev';
+import { getContacts, sha512Hash } from '../library/utils/contact';
 import ContactItem from '../library/components/ContactItem';
 
 class Contact extends Component {
@@ -22,7 +24,22 @@ class Contact extends Component {
 
   componentDidMount() {
     getContacts((contacts) => {
-      console.log(contacts);
+
+      contacts.map((contact) => {
+        sha512Hash(contact.recordID)
+        .then(recordIDHash => {
+          sha512Hash(JSON.stringify(contact))
+          .then(contactHash => {
+            let hashedContact = {
+              'recordID': contact.recordID,
+              'hashedRecordID': recordIDHash,
+              'hashedContact': contactHash
+            }
+            prettyPrintJson(hashedContact);
+          })
+        })
+      });
+
       this.setState({ contacts })
     });
   }

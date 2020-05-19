@@ -37,6 +37,8 @@ target 'dex' do
   # Manually added pods
   pod 'react-native-contacts', :path => '../node_modules/react-native-contacts'
 
+  pod 'react-native-simple-crypto', :path => '../node_modules/react-native-simple-crypto'
+
   target 'dexTests' do
     inherit! :search_paths
     # Pods for testing
