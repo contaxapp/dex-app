@@ -2,26 +2,23 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Button
 } from 'react-native';
 
-import { getContacts } from '../utils/contact';
-
-class Contact extends Component {
+class Home extends Component {
   constructor(props) {
     super();
-  }
-
-  componentDidMount() {
-    getContacts((contacts) => {
-      console.log(contacts);
-    });
   }
 
   render() {
     return (
       <View style={[styles.container]}>
-          <Text>Contacts Home Screen</Text>
+          <Text>Dex Home Screen</Text>
+          <Button
+            title="Go to Contact"
+            onPress={() => this.props.navigation.navigate('Contact')}
+          />
       </View>
     );
   }
@@ -36,4 +33,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Contact;
+export default Home;

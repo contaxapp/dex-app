@@ -1,6 +1,6 @@
 # Dex React Native App
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a04932437c1b449e81cfe97b951b495f)](https://app.codacy.com/manual/kaxevgg/dex-app?utm_source=github.com&utm_medium=referral&utm_content=kaxevgg/dex-app&utm_campaign=Badge_Grade_Dashboard) ![Test Suite](https://github.com/kaxevgg/dex-app/workflows/Test%20Suite/badge.svg) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/ab565c8478474d6fbcf3d4214aed7245)](https://www.codacy.com/manual/kaxevgg/dex-app?utm_source=github.com&utm_medium=referral&utm_content=kaxevgg/dex-app&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2b4a973a4a8249feafada50d0e038b79)](https://www.codacy.com/gh/dexapp/dex-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dexapp/dex-app&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/2b4a973a4a8249feafada50d0e038b79)](https://www.codacy.com/gh/dexapp/dex-app?utm_source=github.com&utm_medium=referral&utm_content=dexapp/dex-app&utm_campaign=Badge_Coverage) ![Test Suite](https://github.com/dexapp/dex-app/workflows/Test%20Suite/badge.svg)
 
 This is the Dex React Native App repository.
 

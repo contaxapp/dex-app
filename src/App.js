@@ -1,24 +1,18 @@
+import 'react-native-gesture-handler';
+
 import React, { Component } from 'react';
 import {
   View,
   Text,
   StyleSheet
 } from 'react-native';
-import {
-  Scene,
-  Router,
-  Actions,
-  ActionConst,
-  Overlay,
-  Tabs,
-  Modal,
-  Drawer,
-  Stack,
-  Lightbox,
-} from 'react-native-router-flux';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import Home from './components/Home';
-import Contact from './components/Contact';
+const Stack = createStackNavigator();
+
+import Home from './screens/Home';
+import Contact from './screens/Contact';
 
 class App extends Component {
   constructor(props) {
@@ -27,12 +21,12 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <Stack key="root">
-          <Scene key="home" component={Home} />
-          <Scene key="contacts" component={Contact} initial />
-        </Stack>
-      </Router>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Contact" component={Contact} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }
