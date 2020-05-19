@@ -22,7 +22,8 @@
     "react-native-message-bar": "^2.0.10",
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^1.0.2",
-    "react-native-screens": "^2.7.0"
+    "react-native-screens": "^2.7.0",
+    "react-native-simple-crypto": "^0.2.12"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

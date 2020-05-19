@@ -184,7 +184,9 @@ PODS:
   - React-jsinspector (0.61.5)
   - react-native-contacts (5.2.0):
     - React
-  - react-native-safe-area-context (1.0.0):
+  - react-native-safe-area-context (1.0.2):
+    - React
+  - react-native-simple-crypto (0.2.12):
     - React
   - React-RCTActionSheet (0.61.5):
     - React-Core/RCTActionSheetHeaders (= 0.61.5)
@@ -250,6 +252,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-contacts (from `../node_modules/react-native-contacts`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-simple-crypto (from `../node_modules/react-native-simple-crypto`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -304,6 +307,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-contacts"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-simple-crypto:
+    :path: "../node_modules/react-native-simple-crypto"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -352,7 +357,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
   react-native-contacts: 439dd9c7ea7e0d86190f8370898b82cfb7cf4ef4
-  react-native-safe-area-context: 5f3e081f937ab7c44c179d551f332fa494cfcf8f
+  react-native-safe-area-context: 5292aacb304803e215ff13fd7f01c3577909319f
+  react-native-simple-crypto: a3b19bd96d96ff444927f76588093470eea54d9e
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -369,6 +375,6 @@ SPEC CHECKSUMS:
   RNScreens: cf198f915f8a2bf163de94ca9f5bfc8d326c3706
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: f35b4d3a0eb6cc588a6d2b2dc27c6e8c276dfa3d
+PODFILE CHECKSUM: 09b64fb93be56564664f61c9312f611b24fa3ece
 
 COCOAPODS: 1.9.1
