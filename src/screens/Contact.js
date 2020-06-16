@@ -9,6 +9,8 @@ import {
 
 import { prettyPrintJson } from '../library/utils/dev';
 import { getContacts, sha512Hash } from '../library/utils/contact';
+import { storeData, getData, deleteData } from '../library/utils/storage';
+
 import ContactItem from '../library/components/ContactItem';
 
 class Contact extends Component {
@@ -23,25 +25,25 @@ class Contact extends Component {
   }
 
   componentDidMount() {
-    getContacts((contacts) => {
+    getData('contacts')
+    .then((contacts) => {
+      if (contacts !== null && contacts.length > 0) {
+        this.setState({ contacts })
+      }
+    });
+  }
 
-      contacts.map((contact) => {
-        sha512Hash(contact.recordID)
-        .then(recordIDHash => {
-          sha512Hash(JSON.stringify(contact))
-          .then(contactHash => {
-            let hashedContact = {
-              'recordID': contact.recordID,
-              'hashedRecordID': recordIDHash,
-              'hashedContact': contactHash
-            }
-            prettyPrintJson(hashedContact);
-          })
-        })
-      });
+  getUpdatedContacts() {
+    getContacts((contacts) => {
+      storeData('contacts', contacts)
 
       this.setState({ contacts })
     });
+  }
+
+  deleteContacts() {
+    deleteData('contacts');
+    this.setState({ contacts: [] })
   }
 
   printContacts(contacts) {
@@ -63,6 +65,14 @@ class Contact extends Component {
       <View style={[styles.container]}>
           <Text>Contacts Home Screen</Text>
           {this.printContacts(this.state.contacts)}
+          <Button
+            title="Get Updated Contacts"
+            onPress={() => this.getUpdatedContacts()}
+          />
+          <Button
+            title="Delete Stored Contacts"
+            onPress={() => this.deleteContacts()}
+          />
           <Button
             title="Go to Home"
             onPress={() => this.props.navigation.navigate('Home')}

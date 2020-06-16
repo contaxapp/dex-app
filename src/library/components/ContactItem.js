@@ -5,14 +5,17 @@ import {
     StyleSheet,
     TouchableHighlight
 } from 'react-native';
+
+import { prettyPrintJson } from '../utils/dev';
 import { sendContactTest } from '../utils/requests';
+import { getHashedContact } from '../utils/contact';
 
 const ContactItem = ({contact}) => {
 
     return (
         <TouchableHighlight onPress={() => {
-            console.log(contact);
-            sendContactTest(contact);
+            prettyPrintJson(contact);
+            getHashedContact(contact).then(hashedContact => prettyPrintJson(hashedContact));
         }}>
             <Text>{contact.givenName + " " + contact.familyName}</Text>
         </TouchableHighlight>
