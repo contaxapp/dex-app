@@ -5752,10 +5752,10 @@ react-native-button@^3.0.1:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-contacts@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/react-native-contacts/-/react-native-contacts-5.2.0.tgz#e7a75460053a771c845ed2bc758a941dc70939ca"
-  integrity sha512-6Y709LriwNvj88ghpk3bWEtAZDBf0F76zteM2DVoZJu70Y/j8AwMwRsL1nkxuYbzkMdqJ9gXAkTJ/F9xjt71eQ==
+react-native-contacts@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-contacts/-/react-native-contacts-5.2.3.tgz#d0192d695fef3cf590a39f56d817c861c4ae6bc0"
+  integrity sha512-dD//eKxZ3Id8yzewjJOzXUC1qeB9RXNEJ/JemAHUx6YsJ0t13lYfR+h71TtSMklMAoOchVtw9Qv6FRxwaCBb2Q==
 
 react-native-gesture-handler@^1.6.1:
   version "1.6.1"
